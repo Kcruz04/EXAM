@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv Show</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div style="display: flex; gap: 100px; align-items: center;">
+        <div>
+            <h2>{{tv_show.title}}</h2>
+
+
+        </div>
+        <div>
+            <a href="/tv_shows">back to shows</a> | 
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div>
+        <table style="width:100%">
+            
+            <tr>
+                <td>Network:</td>
+                <td>{{tv_show.network}}</td>
+            </tr>
+            <tr>
+                <td>Release date</td>
+                <td>{{tv_show.release_date}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{tv_show.description}}</td>
+            </tr>
+            
+        </table>
+    </div>
+
+</body>
+
+</html>

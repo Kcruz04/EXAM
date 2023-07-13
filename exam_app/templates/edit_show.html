@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Show</title>
+</head>
+<body>
+    <h1>Edit "{{tv_show.title}}"</h1>
+    <form action="/update_show" method="POST"><br>
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" value="{{tv_show.title}}"><br>
+        <label for="network">Network:</label><br>
+        <input type="text" name="network" value="{{tv_show.network}}"><br>
+        <label for="release_date">Release Date:</label><br>
+        <input type="text" name="release_date" value="{{tv_show.release_date}}"><br>
+        <label for="description">Description:</label><br>
+        <input type="text" name="description" value="{{tv_show.description}}">
+        <input type="hidden" name="id" value="{{tv_show.id}}"><br>
+        <input type="submit" value="Update"><br>
+        <a href="tv_shows">back to shows</a>
+</body>
+</html>

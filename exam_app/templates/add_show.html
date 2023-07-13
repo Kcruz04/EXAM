@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tv Show</title>
+</head>
+
+<body>
+    <h1>Add Tv Show</h1>
+    <form action="/create_show" method="POST"><br>
+        <label for="title">Title:</label><br>
+        <input type="text" name="title"><br>
+        <label for="network">Network:</label><br>
+        <input type="text" name="network"><br>
+        <label for="release_date">Release Date:</label><br>
+        <input type="date" name="release_date"><br>
+        <label for="description">Description:</label><br>
+        <input type="text" name="description"><br>
+        <input type="hidden" name="user_id" value="{{session['uid']}}">
+        <input type="submit" value="add show">
+        <div>
+            <a href="/tv_shows">Back to Shows</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </form>
+</body>
+
+</html>

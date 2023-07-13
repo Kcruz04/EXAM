@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<body>
+    <h1>Welcome {{user.first_name}} </h1>
+    <h2>TV shows</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Posted by</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tv_show in tv_shows %}
+            <tr>
+                <td>{{tv_show.title}}</td>
+                <td>{{tv_show.network}}</td>
+                <td>{{tv_show.release_date}}</td>
+                <td>{{tv_show.user.first_name}}</td>
+
+                <td>{% if tv_show.user_id == session.uid %}
+                    <a href="/one_show/{{tv_show.id}}">View show</a> |
+                    <a href="/edit_show/{{tv_show.id}}">Edit show</a> | <a href="/delete_show/{{tv_show.id}}">Delete show</a>
+                    {% else %}
+                    <a href="/one_show/{{tv_show.id}}">View show</a>
+                    {% endif %}
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/add_show">Add show</a>
+    <a href="/logout">Logout</a>
+</body>
+
+</html>
